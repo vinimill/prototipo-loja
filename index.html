@@ -1,12 +1,196 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <style src="style.css"></style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>prototipo da loja</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rango | Peça de qualquer loja perto de você</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>prototipo</h1>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="logo" id="btn-logo">
+        <span class="logo__mark">R</span>
+        <span class="logo__text">Rango</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#" class="nav__link" id="btn-como-funciona">Como funciona</a>
+        <a href="#" class="nav__link" id="btn-categorias">Categorias</a>
+        <a href="#" class="nav__link" id="btn-ajuda">Ajuda</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#" class="btn btn--outline btn--sm" id="btn-cadastrar-loja">Cadastre sua loja</a>
+        <button type="button" class="btn btn--ghost" id="btn-login">Entrar</button>
+        <button type="button" class="btn btn--cart" id="btn-carrinho">
+          <span class="btn__cart-icon" aria-hidden="true">🧺</span>
+          Carrinho
+          <span class="btn__badge" id="carrinho-contador">0</span>
+        </button>
+      </div>
+
+      <button type="button" class="hamburger" id="btn-menu-mobile" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Marketplace de comida · Toda a cidade</p>
+        <h1 class="hero__title">CADA ESQUINA<br>TEM UM RANGO.</h1>
+        <p class="hero__subtitle">
+          Descubra lojas de comida perto de você e peça em poucos cliques.
+          Dono de negócio? Cadastre sua loja e comece a vender hoje mesmo.
+        </p>
+
+        <form class="hero__search" role="search" onsubmit="return false;">
+          <span class="hero__search-icon" aria-hidden="true">📍</span>
+          <input
+            type="text"
+            id="input-endereco"
+            class="hero__search-input"
+            placeholder="Digite seu endereço para ver as lojas disponíveis"
+            disabled
+          >
+          <button type="button" class="btn btn--primary" id="btn-buscar-endereco" disabled>Buscar</button>
+        </form>
+
+        <div class="hero__cta">
+          <button type="button" class="btn btn--outline btn--lg" id="btn-ver-lojas">
+            Ver lojas perto de você
+          </button>
+          <a href="#" class="btn btn--text" id="btn-quero-vender">
+            Quero vender no Rango →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CATEGORIAS ===================== -->
+    <section class="categorias">
+      <p class="categorias__label">Filtrar por tipo:</p>
+      <div class="categorias__lista">
+        <button type="button" class="chip" id="cat-frango">🍗 Frango frito</button>
+        <button type="button" class="chip" id="cat-pizza">🍕 Pizza</button>
+        <button type="button" class="chip" id="cat-hamburguer">🍔 Hambúrguer</button>
+        <button type="button" class="chip" id="cat-japonesa">🍣 Japonesa</button>
+        <button type="button" class="chip" id="cat-doces">🍰 Doces</button>
+        <button type="button" class="chip" id="cat-saudavel">🥗 Saudável</button>
+        <button type="button" class="chip" id="cat-bebidas">🥤 Bebidas</button>
+        <button type="button" class="chip" id="cat-mercado">🛒 Mercado</button>
+      </div>
+    </section>
+
+    <!-- ===================== LOJAS (estado dinâmico) ===================== -->
+    <section class="lojas">
+      <div class="lojas__header">
+        <p class="section-eyebrow">Perto de você</p>
+        <h2 class="section-title">Lojas disponíveis</h2>
+        <p class="lojas__hint">
+          As lojas cadastradas na plataforma vão aparecer aqui assim que
+          você informar seu endereço.
+        </p>
+      </div>
+
+      <div class="lojas__grid" id="lista-lojas">
+        <!-- Card placeholder 1 (skeleton) -->
+        <div class="loja-card loja-card--skeleton" aria-hidden="true">
+          <div class="skeleton skeleton--imagem"></div>
+          <div class="skeleton skeleton--linha skeleton--titulo"></div>
+          <div class="skeleton skeleton--linha skeleton--curta"></div>
+        </div>
+        <!-- Card placeholder 2 (skeleton) -->
+        <div class="loja-card loja-card--skeleton" aria-hidden="true">
+          <div class="skeleton skeleton--imagem"></div>
+          <div class="skeleton skeleton--linha skeleton--titulo"></div>
+          <div class="skeleton skeleton--linha skeleton--curta"></div>
+        </div>
+        <!-- Card placeholder 3 (skeleton) -->
+        <div class="loja-card loja-card--skeleton" aria-hidden="true">
+          <div class="skeleton skeleton--imagem"></div>
+          <div class="skeleton skeleton--linha skeleton--titulo"></div>
+          <div class="skeleton skeleton--linha skeleton--curta"></div>
+        </div>
+        <!-- Card placeholder 4 (skeleton) -->
+        <div class="loja-card loja-card--skeleton" aria-hidden="true">
+          <div class="skeleton skeleton--imagem"></div>
+          <div class="skeleton skeleton--linha skeleton--titulo"></div>
+          <div class="skeleton skeleton--linha skeleton--curta"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA VENDEDOR ===================== -->
+    <section class="cta-vendedor">
+      <div class="cta-vendedor__texto">
+        <h2>Tem um negócio de comida?</h2>
+        <p>Cadastre sua loja no Rango, monte seu próprio cardápio e comece a vender pra sua região.</p>
+      </div>
+      <button type="button" class="btn btn--primary btn--lg" id="btn-cadastrar-loja-cta">
+        Cadastrar minha loja
+      </button>
+    </section>
+
+    <!-- ===================== FAIXA DA PLATAFORMA ===================== -->
+    <section class="faixa">
+      <div class="faixa__item">
+        <span class="faixa__num">40min</span>
+        <span class="faixa__label">Tempo de Entrega médio</span>
+      </div>
+      <div class="faixa__item">
+        <span class="faixa__num">50+</span>
+        <span class="faixa__label">Cidades atendidas</span>
+      </div>
+      <div class="faixa__item">
+        <span class="faixa__num">4.8★</span>
+        <span class="faixa__label">Avaliação do app</span>
+      </div>
+      <div class="faixa__item">
+        <span class="faixa__num">100%</span>
+        <span class="faixa__label">Lojas independentes</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="logo__text logo__text--light">Rango</span>
+        <p>O marketplace de comida da sua cidade.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Navegação</h4>
+        <a href="#" id="footer-como-funciona">Como funciona</a>
+        <a href="#" id="footer-categorias">Categorias</a>
+        <a href="#" id="footer-cadastrar-loja">Cadastre sua loja</a>
+        <a href="#" id="footer-entregador">Seja um entregador</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Atendimento</h4>
+        <a href="#" id="footer-faq">Perguntas frequentes</a>
+        <a href="#" id="footer-contato">Fale conosco</a>
+        <a href="#" id="footer-termos">Termos de uso</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Redes sociais</h4>
+        <a href="#" id="footer-instagram">Instagram</a>
+        <a href="#" id="footer-tiktok">TikTok</a>
+        <a href="#" id="footer-whatsapp">WhatsApp</a>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 Rango — Trabalho acadêmico, feito por Gabriel Molina e Marcus vinicius.</p>
+  </footer>
 </body>
 </html>
