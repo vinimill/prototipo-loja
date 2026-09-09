@@ -215,7 +215,7 @@ button{ font-family: inherit; cursor: pointer; border: none; }
   line-height: 1.6;
   color: #4A4038;
   max-width: 440px;
-  margin: 0 0 32px;
+  margin: 0 auto 32px;
 }
 
 .hero__cta{ display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
