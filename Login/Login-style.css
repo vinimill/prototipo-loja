@@ -1,0 +1,123 @@
+.login-body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-main{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 60px;
+}
+
+.login-card{
+  width: 100%;
+  max-width: 460px;
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: var(--sombra);
+}
+
+.login-card__eyebrow{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--vermelho);
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.login-card__title{
+  font-family: var(--display);
+  font-size: 2.2rem;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.login-card__subtitle{
+  font-size: 0.95rem;
+  color: #6B5F52;
+  text-align: center;
+  margin: 0 0 28px;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-form__row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.login-form__group{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-form__group label{
+  font-size: 0.83   rem;
+  font-weight: 600;
+  color: var(--carvao);
+}
+
+.login-form__group input{
+  font-family: var(--corpo);
+  font-size: 0.84rem;
+  padding: 12px 14px;
+  border: 1px solid rgba(28,23,18,0.15);
+  border-radius: 10px;
+  background: var(--creme);
+  color: var(--carvao);
+  outline: none;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.login-form__group input::placeholder{
+  color: #9C8F80;
+}
+
+.login-form__group input:focus{
+  border-color: var(--vermelho);
+  background: var(--branco);
+}
+
+.login-form__submit{
+  margin-top: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.login-card__footer{
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6B5F52;
+  margin: 22px 0 0;
+}
+.login-card__footer a{
+  color: var(--vermelho);
+  font-weight: 700;
+}
+.login-card__footer a:hover{ text-decoration: underline; }
+
+.login-card__voltar{
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: #6B5F52;
+}
+.login-card__voltar:hover{ color: var(--carvao); }
+
+@media (max-width: 520px){
+  .login-card{ padding: 32px 24px; }
+  .login-form__row{ grid-template-columns: 1fr; }
+}
