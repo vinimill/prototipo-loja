@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu carrinho | Rango</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="checkout-style.css">
+</head>
+<body class="checkout-body">
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo" aria-label="Voltar para a página inicial">
+        <span class="logo__mark">R</span>
+        <span class="logo__text">Rango</span>
+      </a>
+
+      <div class="checkout-header__label">Meu carrinho</div>
+
+      <a href="index.html" class="btn btn--outline btn--sm">Continuar comprando</a>
+    </div>
+  </header>
+
+  <main class="checkout-main">
+    <div class="checkout-heading">
+      <p class="section-eyebrow">Seu pedido</p>
+      <h1 class="checkout-title">Carrinho</h1>
+      <p class="checkout-subtitle">Confira os itens antes de finalizar a compra.</p>
+    </div>
+
+    <div class="checkout-layout">
+      <section class="cart-panel" aria-labelledby="cart-items-title">
+        <div class="cart-panel__heading">
+          <h2 id="cart-items-title">Itens do pedido</h2>
+          <span class="cart-count" id="cart-count">0 itens</span>
+        </div>
+
+        <div class="cart-items" id="cart-items" aria-live="polite">
+          <div class="cart-empty" id="cart-empty">
+            <span class="cart-empty__icon" aria-hidden="true">🧺</span>
+            <h3>Seu carrinho está vazio</h3>
+            <p>Adicione itens de uma loja para começar seu pedido.</p>
+            <a href="index.html" class="btn btn--outline">Ver lojas</a>
+          </div>
+        </div>
+
+        <template id="cart-item-template">
+          <article class="cart-item">
+            <img id="cart-item-image" class="cart-item__image" src="" alt="">
+            <div class="cart-item__info">
+              <h3 id="cart-item-name"></h3>
+              <p id="cart-item-description"></p>
+              <div class="cart-item__details">
+                <span>Quantidade: <strong id="cart-item-amount"></strong></span>
+                <span>Preço unitário: <strong id="cart-item-unit-price"></strong></span>
+              </div>
+            </div>
+            <strong id="cart-item-price" class="cart-item__price"></strong>
+          </article>
+        </template>
+      </section>
+
+      <aside class="order-summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Resumo do pedido</h2>
+        <dl class="summary-list">
+          <div>
+            <dt>Subtotal</dt>
+            <dd id="cart-subtotal">R$ 0,00</dd>
+          </div>
+          <div>
+            <dt>Taxa de entrega</dt>
+            <dd id="cart-delivery-fee">R$ 0,00</dd>
+          </div>
+          <div class="summary-list__total">
+            <dt>Total</dt>
+            <dd id="cart-total">R$ 0,00</dd>
+          </div>
+        </dl>
+        <button type="button" class="btn btn--primary btn--lg checkout-button" id="checkout-button" disabled>Ir para o pagamento</button>
+        <p class="summary-note">O pagamento será feito com segurança na próxima etapa.</p>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
