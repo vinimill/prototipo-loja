@@ -6,7 +6,7 @@
 <title>Entrar | Rango</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="Login-style.css">
 </head>
 <body class="login-body">
@@ -14,7 +14,7 @@
   <!-- ===================== HEADER SIMPLES ===================== -->
   <header class="header">
     <div class="header__inner">
-      <a href="../index.html" class="logo" id="btn-logo">
+      <a href="index.html" class="logo" id="btn-logo">
         <span class="logo__mark">R</span>
         <span class="logo__text">Rango</span>
       </a>
@@ -26,68 +26,38 @@
     <section class="login-card">
       <p class="login-card__eyebrow">Bem-vindo de volta</p>
       <h1 class="login-card__title">Entrar no Rango</h1>
-      <p class="login-card__subtitle">Preencha seus dados para continuar.</p>
+      <p class="login-card__subtitle">Digite seu e-mail e senha para continuar.</p>
 
+      <!--
+        Formulário sem lógica: sem action real e sem <script>.
+        O colega responsável pelo JS pode usar os ids dos campos abaixo
+        (ex: document.getElementById('input-email')) para validar e enviar.
+      -->
       <form class="login-form" id="form-login" action="#" method="get">
 
         <div class="login-form__group">
-          <label for="input-nome">Nome completo</label>
+          <label for="input-email">E-mail</label>
           <input
-            type="text"
-            id="input-nome"
-            name="nome"
-            placeholder="Digite seu nome completo"
-            autocomplete="name"
+            type="email"
+            id="input-email"
+            name="email"
+            placeholder="email@exemplo.com"
+            autocomplete="email"
           >
         </div>
 
         <div class="login-form__group">
-          <label for="input-endereco">Endereço</label>
+          <label for="input-senha">Senha</label>
           <input
-            type="text"
-            id="input-endereco"
-            name="endereco"
-            placeholder="Rua, número, bairro, cidade"
-            autocomplete="street-address"
+            type="password"
+            id="input-senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            autocomplete="current-password"
           >
         </div>
 
-        <div class="login-form__row">
-          <div class="login-form__group">
-            <label for="input-email">E-mail</label>
-            <input
-              type="email"
-              id="input-email"
-              name="email"
-              placeholder="email@exemplo.com"
-              autocomplete="email"
-            >
-          </div>
-
-          <div class="login-form__group">
-            <label for="input-telefone">Telefone</label>
-            <input
-              type="tel"
-              id="input-telefone"
-              name="telefone"
-              placeholder="(00) 00000-0000"
-              autocomplete="tel"
-            >
-          </div>
-        </div>
-
-        <div class="login-form__group">
-          <label for="input-cpf">CPF</label>
-          <input
-            type="text"
-            id="input-cpf"
-            name="cpf"
-            placeholder="000.000.000-00"
-            inputmode="numeric"
-            maxlength="14"
-            autocomplete="off"
-          >
-        </div>
+        <a href="#" class="login-form__esqueci" id="link-esqueci-senha">Esqueci minha senha</a>
 
         <button type="submit" class="btn btn--primary btn--lg login-form__submit" id="btn-login-submit">
           Entrar
@@ -97,19 +67,19 @@
 
       <p class="login-card__footer">
         Ainda não tem conta?
-        <a href="#" id="link-cadastro">Cadastre-se</a>
+        <a href="cadastro.html" id="link-cadastro">Cadastre-se</a>
       </p>
 
-      <a href="../index.html" class="login-card__voltar" id="link-voltar">← Voltar para o início</a>
+      <a href="index.html" class="login-card__voltar" id="link-voltar">← Voltar para o início</a>
     </section>
   </main>
 
   <!--
-    OBS
-    Nenhum <script> foi incluído. O VINIMIL ainda precisa:
-    - Validar os campos (nome, endereço, email, telefone, cpf)
+    OBS PARA O GRUPO:
+    Nenhum <script> foi incluído de propósito. O colega do JS ainda precisa:
+    - Validar os campos (email, senha)
     - Tratar o envio do #form-login (hoje o botão #btn-login-submit não faz nada real)
-    - Ligar os links #link-cadastro e #link-voltar caso precise de comportamento extra
+    - Ligar o link #link-esqueci-senha caso precise de comportamento extra
   -->
 </body>
 </html>

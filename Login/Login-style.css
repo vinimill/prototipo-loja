@@ -1,3 +1,9 @@
+/* =========================================================
+   RANGO — PÁGINA DE LOGIN
+   Este arquivo assume que style.css já foi carregado antes
+   (ele define as variáveis de cor/tipografia e o header).
+   ========================================================= */
+
 .login-body{
   min-height: 100vh;
   display: flex;
@@ -57,6 +63,15 @@
   gap: 18px;
 }
 
+.login-form__esqueci{
+  align-self: flex-end;
+  font-size: 0.85rem;
+  color: var(--vermelho);
+  font-weight: 600;
+  margin-top: -8px;
+}
+.login-form__esqueci:hover{ text-decoration: underline; }
+
 .login-form__group{
   display: flex;
   flex-direction: column;
@@ -64,15 +79,15 @@
 }
 
 .login-form__group label{
-  font-size: 0.83   rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--carvao);
 }
 
 .login-form__group input{
   font-family: var(--corpo);
-  font-size: 0.84rem;
-  padding: 12px 14px;
+  font-size: 0.95rem;
+  padding: 12px 4px;
   border: 1px solid rgba(28,23,18,0.15);
   border-radius: 10px;
   background: var(--creme);
